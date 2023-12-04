@@ -1,4 +1,4 @@
-file_path = 'Aoc-Day3.txt'  # Replace 'your_file.txt' with the actual path to your text file
+file_path = 'puzzle-input.txt'  # Replace 'your_file.txt' with the actual path to your text file
 
 engine_num = 0
 lines = []
