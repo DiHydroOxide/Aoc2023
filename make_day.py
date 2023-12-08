@@ -17,8 +17,8 @@ def create_folder_and_files(d):
                            "\n"
                            "with open(file_name, 'r') as f:\n")
 
-    # Create part1.py
-    with open(os.path.join(folder_name, 'part1.py'), 'w') as part1_file:
+    # Create part1-tmp.py
+    with open(os.path.join(folder_name, 'part1-tmp.py'), 'w') as part1_file:
         part1_file.write(python_file_content)
 
     # Create part2.py
@@ -37,4 +37,4 @@ if __name__ == "__main__":
     else:
         day = sys.argv[1]
         create_folder_and_files(day)
-        print(f"Folder '{day}' created with files part1.py, part2.py, and puzzle-input.txt.")
+        print(f"Folder '{day}' created with files part1-tmp.py, part2.py, and puzzle-input.txt.")
