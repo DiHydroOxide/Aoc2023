@@ -11,14 +11,10 @@ def create_folder_and_files(d):
     # Define the content for the Python files
     python_file_content = ("file_name = 'puzzle-input.txt'\n"
                            "\n"
-                           " = []\n"
-                           " = {}\n"
-                           " = 0\n"
-                           "\n"
                            "with open(file_name, 'r') as f:\n")
 
-    # Create part1-tmp.py
-    with open(os.path.join(folder_name, 'part1-tmp.py'), 'w') as part1_file:
+    # Create part1.py
+    with open(os.path.join(folder_name, 'part1.py'), 'w') as part1_file:
         part1_file.write(python_file_content)
 
     # Create part2.py
