@@ -9,7 +9,8 @@ def create_folder_and_files(d):
     os.makedirs(folder_name, exist_ok=True)
 
     # Define the content for the Python files
-    python_file_content = ("file_name = 'puzzle-input.txt'\n"
+    python_file_content = ("# file_name = 'puzzle-input.txt'\n"
+                           "file_name = 'sample.txt'\n"
                            "\n"
                            "with open(file_name, 'r') as f:\n")
 
