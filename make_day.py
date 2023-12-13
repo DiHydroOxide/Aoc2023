@@ -8,30 +8,27 @@ def create_folder_and_files(d):
     # Create the folder
     os.makedirs(folder_name, exist_ok=True)
 
-    # Define the content for the Python files
-    python_file_content = ("# file_name = 'puzzle-input.txt'\n"
-                           "file_name = 'sample.txt'\n"
-                           "\n"
-                           "with open(file_name, 'r') as f:\n")
-
     # Create part1.py
     with open(os.path.join(folder_name, 'part1.py'), 'w') as part1_file:
-        part1_file.write(python_file_content)
+        part1_file.write("# file_name = 'puzzle-input.txt'\n"
+                         "file_name = 'sample.txt'\n"
+                         "\n"
+                         "with open(file_name, 'r') as f:\n"
+                         "\tgrid = [line.strip() for line in f]\n"
+                         "\trow, grid = f.read().split('\\n\\n')\n"
+                         "\n"
+                         "print(f\"Answer is {ans}\")")
 
-    # Create part2.py
-    with open(os.path.join(folder_name, 'part2.py'), 'w') as part2_file:
-        part2_file.write(python_file_content)
-
-    # Create puzzle-input.txt
-    with open(os.path.join(folder_name, 'puzzle-input.txt'), 'w') as input_file:
-        input_file.write("")
+    for f in ['part2.py', 'puzzle-input.txt', 'sample.txt']:
+        with open(os.path.join(folder_name, f), 'w') as input_file:
+            input_file.write("")
 
 
 if __name__ == "__main__":
     # Check if the script is given exactly one argument
     if len(sys.argv) != 2:
-        print("Usage: python script_name.py folder_name")
+        print("Usage: python make_day.py <day>")
     else:
         day = sys.argv[1]
         create_folder_and_files(day)
-        print(f"Folder '{day}' created with files part1-tmp.py, part2.py, and puzzle-input.txt.")
+        print(f"Folder '{day}' created")
