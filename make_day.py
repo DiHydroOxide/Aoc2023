@@ -12,6 +12,7 @@ def create_folder_and_files(d):
     with open(os.path.join(folder_name, 'part1.py'), 'w') as part1_file:
         part1_file.write("# file_name = 'puzzle-input.txt'\n"
                          "file_name = 'sample.txt'\n"
+                         "ans = 0\n"
                          "\n"
                          "with open(file_name, 'r') as f:\n"
                          "\tgrid = [line.strip() for line in f]\n"
