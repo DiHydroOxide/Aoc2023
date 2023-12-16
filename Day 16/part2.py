@@ -5,11 +5,6 @@ starting_lazer = []
 ans = []
 
 
-def dump(cont):
-    for c in cont.values():
-        print(c)
-
-
 # Continue lazer on its path and return new (row, col)
 def cont(diff, curr):
     return curr[0] + diff[0], curr[1] + diff[1]
@@ -64,10 +59,7 @@ for lazer in starting_lazer:
                 case '\\':
                     new = current[0] + diff[1], current[1] + diff[0]
                 case _:
-                    print(f"FUCK {tile}")
                     exit()
-
-            # print(f"Tile = {tile}, prev = {prev}, Current = {current}, NEW = {new}")
 
             lazer[i] = (current, new)
         else:
